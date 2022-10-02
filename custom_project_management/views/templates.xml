@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="page_task" name="Task" page="True">
+            <t t-call="website.layout">
+              <div id="wrap">
+                <div class="oe_structure"/>
+                <div class="container">
+                    <h1>Task</h1>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <table class="table table-striped table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>User Image</th>
+                                        <th>Assign to</th>
+                                        <th>Task Summary</th>
+                                        <th>Project</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="tasks" t-as="task" id="project_task_information">
+                                        <td>
+                                            <img t-att-src="'data:image/png;base64,%s' % task['user_image']" style="height:40px"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="task['user_name']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="task['task_name']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="task['project_name']"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-4 mb32"/>
+                    </div>
+                </div>
+                <div class="oe_structure"/>
+              </div>
+            </t>
+        </template>
+    </data>
+</openerp>

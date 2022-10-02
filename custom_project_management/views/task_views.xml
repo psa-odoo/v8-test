@@ -65,7 +65,7 @@
             <field name="view_id" ref="custom_view_task_tree2"/>
             <field name="act_window_id" ref="custom_action_view_task"/>
         </record>
-        
+
         <record id="custom_open_view_task_list_form" model="ir.actions.act_window.view">
             <field name="sequence" eval="0"/>
             <field name="view_mode">form</field>
